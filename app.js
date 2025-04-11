@@ -17,6 +17,11 @@ app.use(express.json());
 app.use(cors());
 
 
+// import routes
+
+// load routes
+
+
 // import db
 import connectMongoDB from "./config/database.js";
 import User from "./models/user.js";

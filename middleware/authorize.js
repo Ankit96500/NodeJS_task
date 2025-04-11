@@ -14,8 +14,6 @@ export async function UserAuthorized(req,res,next) {
      
         const user = await User.findById(user_ID.userID)
     
-
-
         req.user = user
     
         next();       
