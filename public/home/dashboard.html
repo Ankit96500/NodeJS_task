@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <!-- <div style="margin: 5%;">
+        <h1>Dash board page</h1>
+    </div>
+      navbar -->
+
+    <div class="navbar-container">
+        <div class="navbar">
+            <!-- Logo -->
+            <a href="#" class="logo">Expense Tracker</a>
+
+            <!-- Navbar Links -->
+            <ul>
+                <li><a href="../home/home.html">Home</a></li>
+                <li><a href="#" id="leaderboard" style="display: none;"></a></li>
+                <!-- <li><a href="#" id="showexpense" style="display: none;"></a></li> -->
+                <input type="hidden" id="showexpense">
+            </ul>
+            
+                <!-- Displaying the username or email -->
+            <div class="user-info">
+                <span class="username">Hi, <strong id="username"></strong></span>
+            </div>
+
+            <!-- LOG OUT Button -->
+            <button class="btn" id="logoutBtn">Logout</button>
+        </div>
+    </div>
+
+<script src="../js/dashboard.js"></script>
+</body>
+</html>

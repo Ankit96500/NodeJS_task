@@ -16,10 +16,20 @@ app.use(express.static(path.join(process.cwd(),"public")))
 app.use(express.json());
 app.use(cors());
 
+// default route:
+app.get("/",(req,res)=>{
+    res.sendFile(path.join(process.cwd(),"public","account","login.html"));
+});
+
 
 // import routes
+import accountRoute from "./routes/accountRoutes.js";
+import blogRoute from "./routes/blogRoutes.js";
+
 
 // load routes
+app.use('/account',accountRoute);
+app.use('/blog',blogRoute);
 
 
 // import db
@@ -33,10 +43,9 @@ connectMongoDB((err)=>{
     if(err){
         console.log("Error connecting to MongoDB",err);
     }else{
-                
-        app.listen(4000,()=>{
-            console.log("Server is running on port 4000");
+        app.listen(3000,()=>{
+            console.log("Server is running on port 3000");
         });
-        console.log("Connected to MongoDB");
+        console.log("Connected to MongoDB");         
     }
 });

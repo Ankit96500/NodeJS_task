@@ -1,5 +1,20 @@
-/* log in page */
+ /* display error */
+ #error{
+  color: red;
+ }
 
+/* General form styles */
+h2 {
+    text-align: center;
+  }
+h1{
+  padding-bottom: 20;
+  text-align: center;
+  color: #28a78c;
+}
+
+
+/* log in page */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
