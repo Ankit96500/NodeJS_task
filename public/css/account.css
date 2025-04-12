@@ -42,7 +42,8 @@ body {
   }
   
   input[type="email"],
-  input[type="password"] {
+  input[type="password"],
+  input[type="url"] {
     padding: 12px;
     font-size: 16px;
     border: 1px solid #ccc;

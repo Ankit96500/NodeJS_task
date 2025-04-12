@@ -41,6 +41,7 @@ async function LoginUser(LoginUserData) {
     
             localStorage.setItem('token',fetchData.token);
             localStorage.setItem('userEmail',fetchData.data.email);
+            localStorage.setItem('userImage',fetchData.data.image);
             // Redirect to Home page
             window.location.href = "../home/dashboard.html"; 
 

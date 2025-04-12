@@ -16,9 +16,12 @@ app.use(express.static(path.join(process.cwd(),"public")))
 app.use(express.json());
 app.use(cors());
 
+
 // default route:
 app.get("/",(req,res)=>{
-    res.sendFile(path.join(process.cwd(),"public","account","login.html"));
+    if (req.url !=="/favicon.ico") {
+        res.sendFile(path.join(process.cwd(),"public","account","login.html"));
+    }
 });
 
 

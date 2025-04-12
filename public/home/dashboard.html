@@ -7,34 +7,60 @@
     <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
-    <!-- <div style="margin: 5%;">
-        <h1>Dash board page</h1>
-    </div>
-      navbar -->
-
+    <!-- navbar -->
     <div class="navbar-container">
         <div class="navbar">
             <!-- Logo -->
-            <a href="#" class="logo">Expense Tracker</a>
-
-            <!-- Navbar Links -->
-            <ul>
-                <li><a href="../home/home.html">Home</a></li>
-                <li><a href="#" id="leaderboard" style="display: none;"></a></li>
-                <!-- <li><a href="#" id="showexpense" style="display: none;"></a></li> -->
-                <input type="hidden" id="showexpense">
-            </ul>
-            
-                <!-- Displaying the username or email -->
-            <div class="user-info">
-                <span class="username">Hi, <strong id="username"></strong></span>
-            </div>
+            <a href="#" class="logo">NodeJS Task</a>
 
             <!-- LOG OUT Button -->
             <button class="btn" id="logoutBtn">Logout</button>
+
+            <!-- Displaying the username or email -->
+            <div class="user-info">
+                <span class="username">Hi, <strong id="username"></strong> </span>
+                <span style="margin-left: 5px;"><img id="userimg" ></span>
+            </div>
+
         </div>
     </div>
 
-<script src="../js/dashboard.js"></script>
+    <!-- blog form -->
+    
+    <form id="blog-form" style="margin-top: 5%;">
+        <input type="text" id="title" placeholder="Blog Title" required>
+        <input type="url" id="imageUrl" placeholder="Image URL" required>
+        <textarea id="description" placeholder="Blog Description" rows="2" required></textarea>
+        <button type="submit" id="submitBlogBtn"></button>
+    </form>
+
+
+
+    <!-- table to display blogs -->
+    <div id="blogs" style="display: none;">
+
+        <table id="blogsTable" border="1">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Blogs rows will be injected here -->
+            </tbody>
+        </table>
+    </div>
+      
+    <h1 id="noBlogs"></h1>
+     
+
+
+
+
+     <script src="../js/dashboard.js"></script>
 </body>
 </html>

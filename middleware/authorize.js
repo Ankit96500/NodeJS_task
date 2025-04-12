@@ -8,14 +8,15 @@ dotenv.config();
 export async function UserAuthorized(req,res,next) {
     try {
         const token = req.header('Authorization')
-        
+
         // verify the token
         const user_ID = JWT.verify(token,process.env.JWT_SECRET_KEY)
      
         const user = await User.findById(user_ID.userID)
     
         req.user = user
-    
+       
+        
         next();       
 
     } catch (error) {

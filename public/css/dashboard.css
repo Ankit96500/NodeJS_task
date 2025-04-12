@@ -112,3 +112,79 @@ body {
     color: #f1f1f1;
 }
 
+
+/* blogs table css */
+
+
+  table {
+    padding: 20px;
+    margin-top: 5%;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #467446;
+    color: white;
+  }
+
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  button {
+    padding: 6px 12px;
+    color: white;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #c0392b;
+  }
+
+/* blog form */
+
+#blog-form {
+  margin-bottom: 20px;
+}
+
+#blog-form input, #blog-form textarea {
+  display: block;
+  margin: 10px 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#postBlog {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.blog-post {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.blog-post img {
+  max-width: 100%;
+}
+
+.blog-post button {
+  margin-right: 10px;
+  cursor: pointer;
+}
