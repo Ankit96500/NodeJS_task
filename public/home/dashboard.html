@@ -26,15 +26,16 @@
     </div>
 
     <!-- blog form -->
-    
-    <form id="blog-form" style="margin-top: 5%;">
-        <input type="text" id="title" placeholder="Blog Title" required>
-        <input type="url" id="imageUrl" placeholder="Image URL" required>
-        <textarea id="description" placeholder="Blog Description" rows="2" required></textarea>
-        <button type="submit" id="submitBlogBtn"></button>
-    </form>
-
-
+    <div class="form-container">
+        <h2>Create a New Blog Post</h2>
+        <form id="blog-form" >
+            <input type="text" id="title" placeholder="Blog Title" required>
+            <input type="url" id="imageUrl" placeholder="Image URL" required>
+            <textarea id="description" placeholder="Blog Description" rows="2" required></textarea>
+            <button type="submit" id="submitBlogBtn"></button>
+        </form>
+        
+    </div>
 
     <!-- table to display blogs -->
     <div id="blogs" style="display: none;">
@@ -56,9 +57,6 @@
     </div>
       
     <h1 id="noBlogs"></h1>
-     
-
-
 
 
      <script src="../js/dashboard.js"></script>

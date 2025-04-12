@@ -7,7 +7,7 @@ dotenv.config();
 
 const URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.hb0jhqu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
-
+// mongodb database configuration
 async function connectMongoDB(cb){
     try {
         mongoose.connect(URI);

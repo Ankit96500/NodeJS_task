@@ -47,50 +47,6 @@ body {
     color: #f1f1f1;
 }
 
-/* Navbar Links */
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-.navbar ul li {
-    margin: 0 20px;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 10px;
-    transition: all 0.3s ease; /* Smooth hover transition */
-    position: relative;
-}
-
-.navbar ul li a::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background-color: white;
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    transition: width 0.3s ease; /* Line under hover */
-}
-
-.navbar ul li a:hover::after {
-    width: 100%;
-}
-
-.navbar ul li a:hover {
-    color: #f1f1f1;
-}
-
-
 
 
 /* Username Section */
@@ -114,7 +70,6 @@ body {
 
 
 /* blogs table css */
-
 
   table {
     padding: 20px;
@@ -153,47 +108,57 @@ body {
     background-color: #fc1900;
   }
   .editBtn {
-    background-color: #3787ff;
+    background-color: #007bff;
   }
 
   .editBtn:hover {
-    background-color: #1538ff;
+    background-color: #0056b3;
   }
   button:hover {
     background-color: #394d48;
   }
 
 /* blog form */
-
-#blog-form {
-  margin-bottom: 20px;
+.form-container {
+  max-width: 600px;
+  margin: 3% auto 5px auto;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  background-color: #f9f9f9;
 }
 
-#blog-form input, #blog-form textarea {
+#blog-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+#blog-form input,
+#blog-form textarea {
   display: block;
   margin: 10px 0;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
-}
-
-#postBlog {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.blog-post {
   border: 1px solid #ddd;
-  padding: 20px;
-  margin-bottom: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-.blog-post img {
-  max-width: 100%;
-}
-
-.blog-post button {
-  margin-right: 10px;
+#submitBlogBtn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+}
+
+#submitBlogBtn:hover {
+  background-color: #0056b3;
 }

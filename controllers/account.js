@@ -7,9 +7,8 @@ const saltRounds = 10;
 
 dotenv.config()
 
-export async function signupUser(req, res, next) {
-  const { email, password } = req.body;
-  console.log(' ia m signup calling',email,password);
+export async function signupUser(req, res) {
+  const { email, password,image } = req.body;
   
   try {
     const hashpassword = await bcrypt.hash(password, saltRounds);
@@ -17,6 +16,7 @@ export async function signupUser(req, res, next) {
     const data = new User({
       password: hashpassword,
       email: email,
+      image: image
     });
     await data.save();
     
@@ -27,9 +27,7 @@ export async function signupUser(req, res, next) {
 }
 
 export async function loginUser(req, res) {
-  const email = req.body.email;
-  const password = req.body.password;
-  console.log(' this is calling',email,password);
+  const {email, password} = req.body;
   
   try {
     // first check , given email exist or not

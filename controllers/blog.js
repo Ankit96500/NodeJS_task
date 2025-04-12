@@ -52,9 +52,9 @@ export const createBlog = async function(req,res){
 };
 
 export const updateBlog = async function(req,res){
+    const blogId = req.params.id;
+    const { title, imageUrl, description } = req.body;
     try {
-        const blogId = req.params.id;
-        const { title, imageUrl, description } = req.body;
         
         const updatedBlog = await Blog.findByIdAndUpdate(blogId, {
             title: title,
@@ -77,10 +77,9 @@ export const updateBlog = async function(req,res){
 };
 
 export const deleteBlog = async function(req,res){
+    const blogId = req.params.id;
     try {
-        
-        const blogId = req.params.id;
-    
+        // find the blog by id and delete it.    
         const deletedBlog = await Blog.findByIdAndDelete(blogId);
       
         if (!deletedBlog) {
@@ -102,17 +101,12 @@ export const deleteBlog = async function(req,res){
         });
     }
 
-
-
-
-
-
 };
 
 export const getBlogData = async function(req,res){
-    try {
-        const blogId = req.params.id;
-      
+    const blogId = req.params.id;
+    try {      
+        
         const blogData = await Blog.findById(blogId);
       
         if (!blogData) {

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const UserData = {
             password: document.getElementById('password').value,
             email: document.getElementById('email').value,
-            image: document.getElementById('image').value,
+            image: document.getElementById('profileImg').value,
         };
         // Create a new blog
         SignupUser(UserData);

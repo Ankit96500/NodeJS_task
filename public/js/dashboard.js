@@ -1,12 +1,11 @@
 
 
-const userEmail = document.querySelector('#username');
-const userImage = document.querySelector('#userimg');
-const submitBlogBtn = document.querySelector('#submitBlogBtn');
+const userEmail = document.getElementById('username');
+const userImage = document.getElementById('userimg');
+const submitBlogBtn = document.getElementById('submitBlogBtn');
 
 
 let editBlogId = null; // Variable to store the ID of the blog being edited
-
 
 // load dashboard page
 async function loadDashboard() {
@@ -33,7 +32,6 @@ async function loadDashboard() {
                 'Authorization':localStorage.getItem('token')
             }
         });
-
 
         if(response.ok){
             const fetchData = await response.json();
@@ -133,8 +131,7 @@ async function createBlog(blogData){
                 body: JSON.stringify(blogData)
             });
             if (response.ok) {
-                console.log('-->',response);
-                
+                // console.log('-->',response);
                 // if request made successfully then call to load dashboard.
                 loadDashboard();
             } else {
