@@ -1,8 +1,8 @@
 
 
-const userEmail = document.getElementById('username');
-const userImage = document.getElementById('userimg');
-const submitBlogBtn = document.getElementById('submitBlogBtn');
+const userEmail = document.querySelector('#username');
+const userImage = document.querySelector('#userimg');
+const submitBlogBtn = document.querySelector('#submitBlogBtn');
 
 
 let editBlogId = null; // Variable to store the ID of the blog being edited
@@ -72,7 +72,6 @@ document.getElementById('blog-form').addEventListener('submit',function(e){
 });
 
 
-
 // logout button
 document.getElementById('logoutBtn').addEventListener('click', function() {
     // clear all storage 
@@ -84,7 +83,7 @@ document.getElementById('logoutBtn').addEventListener('click', function() {
 function displayBlogs(fetchData){
     const fetchDataArray = fetchData.blogs;
     if (Array.isArray(fetchDataArray) && fetchDataArray.length > 0) {
-        document.getElementById('blogs').style.display = 'block';
+        document.querySelector('#blogs').style.display = 'block';
         
         const tableBody = document.querySelector('#blogsTable tbody');
         tableBody.innerHTML = ""; // Clear any previous rows
@@ -98,12 +97,12 @@ function displayBlogs(fetchData){
                 <td>${blog.description}</td>
                 <td>
                    <div style="display: flex; justify-content: space-between; align-items: center; gap:10px;">
-                    <button onclick="deleteBlog('${blog._id}')">Delete</button>
-                    <button onclick="editBlog('${blog._id}')">Edit</button> 
+                    <button class = "deleteBtn" onclick="deleteBlog('${blog._id}')">Delete</button>
+                    <button class = "editBtn" onclick="editBlog('${blog._id}')">Edit</button> 
                    </div>             
                 </td>
                 <td>    
-                    <button onclick="viewBlog('${blog._id}')">View</button>              
+                    <button onclick="viewBlogRedirect('${blog._id}')">View</button>              
                 </td>
             `;
 
@@ -223,31 +222,12 @@ async function editBlog(id){
     }
 }
 
-
-async function viewBlog(id){
-
-    console.log('view blog', id);
-
-    try {
-        const response = await fetch(`http://localhost:3000/blog/view-blog/${id}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': localStorage.getItem('token')
-            }
-        });
-        if (response.ok) {
-            const data = await response.json();
-            console.log('Blog details:', data);
-
-        } else {
-            console.error('Error viewing blog:', response.statusText);
-        }
-    } catch (error) {
-        console.error('Error viewing blog:', error);
-    }
+function viewBlogRedirect(id){
+    console.log('view blog redirect', id);
+    localStorage.setItem('blogId', id); // Store the blog ID in local storage
+    // Redirect to the view blog page
+    window.location.href = "../home/viewBlog.html";
 }
-
 
 
 

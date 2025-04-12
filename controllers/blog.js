@@ -112,10 +112,9 @@ export const deleteBlog = async function(req,res){
 export const getBlogData = async function(req,res){
     try {
         const blogId = req.params.id;
-        console.log('blog id',blogId);
-        
+      
         const blogData = await Blog.findById(blogId);
-        console.log('blog data',blogData);
+      
         if (!blogData) {
             return res.status(404).json({
                 status: false,

@@ -144,14 +144,23 @@ body {
   button {
     padding: 6px 12px;
     color: white;
-    background-color: #e74c3c;
+    background-color: #474040;
     border: none;
     border-radius: 4px;
     cursor: pointer;
   }
+  .deleteBtn {
+    background-color: #fc1900;
+  }
+  .editBtn {
+    background-color: #3787ff;
+  }
 
+  .editBtn:hover {
+    background-color: #1538ff;
+  }
   button:hover {
-    background-color: #c0392b;
+    background-color: #394d48;
   }
 
 /* blog form */
